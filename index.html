@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -6,112 +7,224 @@
 
 <title>Colegios Trilce</title>
 
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
 <style>
 
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
+    scroll-behavior:smooth;
 }
 
 body{
-    font-family: Arial, sans-serif;
-    background:#f5f5f5;
+    font-family:'Poppins', sans-serif;
+    background:#f7f7f7;
     color:#333;
 }
+
+/* HEADER */
 
 header{
     background:#c40000;
     color:white;
-    padding:25px;
+    padding:20px;
     text-align:center;
+    box-shadow:0 3px 10px rgba(0,0,0,0.1);
 }
 
 header h1{
-    font-size:45px;
+    font-size:40px;
 }
 
+/* NAVBAR */
+
 nav{
-    background:#a00000;
-    padding:15px;
+    background:#980000;
+    padding:18px;
     text-align:center;
+    position:sticky;
+    top:0;
+    z-index:1000;
 }
 
 nav a{
     color:white;
     text-decoration:none;
-    margin:0 20px;
-    font-weight:bold;
+    margin:0 25px;
+    font-weight:600;
+    transition:0.3s;
+    position:relative;
 }
+
+nav a:hover{
+    color:#ffd6d6;
+}
+
+nav a::after{
+    content:'';
+    position:absolute;
+    width:0%;
+    height:2px;
+    left:0;
+    bottom:-5px;
+    background:white;
+    transition:0.3s;
+}
+
+nav a:hover::after{
+    width:100%;
+}
+
+/* HERO */
 
 .hero{
     background:url('https://www.trilce.edu.pe/storage/static/colegio/home/banner-web-colegio.webp');
     background-size:cover;
     background-position:center;
-    height:400px;
+    height:500px;
     display:flex;
     justify-content:center;
     align-items:center;
-    color:white;
     text-align:center;
-    background-blend-mode:darken;
-background-color:rgba(0,0,0,0.4);
+    position:relative;
+}
+
+.hero::before{
+    content:'';
+    position:absolute;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.55);
+}
+
+.hero-content{
+    position:relative;
+    color:white;
 }
 
 .hero h2{
-    font-size:50px;
-    background:rgba(0,0,0,0.5);
-    padding:20px;
-    border-radius:10px;
+    font-size:55px;
+    margin-bottom:15px;
 }
+
+.hero p{
+    font-size:20px;
+    margin-bottom:25px;
+}
+
+.btn{
+    background:#c40000;
+    color:white;
+    text-decoration:none;
+    padding:14px 28px;
+    border-radius:8px;
+    font-weight:600;
+    transition:0.3s;
+}
+
+.btn:hover{
+    background:#980000;
+}
+
+/* CONTENIDO */
 
 .contenedor{
     width:90%;
+    max-width:1200px;
     margin:auto;
-    padding:40px 0;
+    padding:50px 0;
 }
 
 .seccion{
-    margin-bottom:50px;
+    background:white;
+    padding:35px;
+    margin-bottom:35px;
+    border-radius:18px;
+    box-shadow:0 8px 25px rgba(0,0,0,0.08);
+    transition:0.3s;
+}
+
+.seccion:hover{
+    transform:translateY(-5px);
 }
 
 .seccion h2{
     color:#c40000;
     margin-bottom:20px;
-    font-size:35px;
+    font-size:32px;
 }
 
 .seccion p{
-    font-size:18px;
-    line-height:1.7;
+    font-size:17px;
+    line-height:1.8;
 }
+
+/* LISTAS */
+
+ul{
+    padding-left:20px;
+}
+
+li{
+    margin-bottom:10px;
+    font-size:17px;
+}
+
+/* GALERIA */
 
 .galeria{
     display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:20px;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:25px;
     margin-top:20px;
 }
 
 .galeria img{
     width:100%;
-    height:400px;
-    object-fit:contain;
-    background:white;
-    padding:10px;
-    border-radius:10px;
+    height:260px;
+    object-fit:cover;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+    transition:0.4s;
 }
 
 .galeria img:hover{
-    transform:scale(1.03);
+    transform:scale(1.04);
 }
 
+/* FOOTER */
+
 footer{
-    background:#222222;
-    color:rgb(3, 0, 0);
+    background:#1b1b1b;
+    color:white;
     text-align:center;
-    padding:20px;
+    padding:25px;
     margin-top:40px;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:768px){
+
+    header h1{
+        font-size:30px;
+    }
+
+    nav a{
+        display:block;
+        margin:10px 0;
+    }
+
+    .hero h2{
+        font-size:35px;
+    }
+
+    .hero p{
+        font-size:16px;
+    }
+
 }
 
 </style>
@@ -125,81 +238,71 @@ footer{
 </header>
 
 <nav>
-    <a href="#">Inicio</a>
-    <a href="#">Nosotros</a>
-    <a href="#">Servicios</a>
-    <a href="#">Contacto</a>
+    <a href="#nosotros">Nosotros</a>
+    <a href="#servicios">Servicios</a>
+    <a href="#niveles">Niveles</a>
+    <a href="#sedes">Sedes</a>
 </nav>
 
 <section class="hero">
-    <h2>Bienvenidos a Trilce</h2>
+    <div class="hero-content">
+        <h2>Bienvenidos a Trilce</h2>
+        <p>Formando líderes del futuro con excelencia académica</p>
+        <a href="#sedes" class="btn">Conoce nuestras sedes</a>
+    </div>
 </section>
 
 <div class="contenedor">
 
-    <section class="seccion">
+    <section class="seccion" id="nosotros">
         <h2>¿Quiénes somos?</h2>
-
         <p>
-            Trilce es una institución educativa reconocida en el Perú por su excelencia académica, innovación y formación integral de estudiantes. 
-            Cuenta con diversos colegios y academias a nivel nacional, brindando una educación moderna y enfocada en el desarrollo del alumno.
+            Trilce es una institución educativa reconocida en el Perú por su excelencia académica,
+            innovación y formación integral de estudiantes. Cuenta con diversos colegios y academias
+            a nivel nacional, brindando educación moderna y enfocada en el desarrollo del alumno.
         </p>
     </section>
 
-    <section class="seccion">
-
+    <section class="seccion" id="servicios">
         <h2>Nuestros Servicios</h2>
+        <ul>
+            <li>Educación primaria y secundaria</li>
+            <li>Preparación preuniversitaria</li>
+            <li>Actividades deportivas y culturales</li>
+            <li>Plataforma virtual educativa</li>
+            <li>Docentes altamente capacitados</li>
+        </ul>
+    </section>
 
-        <p>
-            • Educación primaria y secundaria<br>
-            • Preparación preuniversitaria<br>
-            • Actividades deportivas y culturales<br>
-            • Plataforma virtual educativa<br>
-            • Docentes altamente capacitados
-        </p>
-
-    <section class="seccion">
-
-
+    <section class="seccion" id="niveles">
         <h2>Niveles Educativos</h2>
+        <ul>
+            <li>Inicial</li>
+            <li>Primaria</li>
+            <li>Secundaria</li>
+            <li>Preparación preuniversitaria</li>
+        </ul>
+    </section>
 
-
-    <p>
-• Inicial<br>
-• Primaria<br>
-• Secundaria<br>
-• Preparación preuniversitaria
-</p>
-
-</section>
-<section class="seccion">
-
-<h2>Nuestras sedes</h2>
-
-<p>
-• Los Olivos<br>
-• Comas<br>
-• San Isidro<br>
-• Villa El Salvador<br>
-• Surco
-</p>
-
-</section>
+    <section class="seccion" id="sedes">
+        <h2>Nuestras sedes</h2>
+        <ul>
+            <li>Los Olivos</li>
+            <li>Comas</li>
+            <li>San Isidro</li>
+            <li>Villa El Salvador</li>
+            <li>Surco</li>
+        </ul>
+    </section>
 
     <section class="seccion">
-
-       
+        <h2>Galería</h2>
 
         <div class="galeria">
-
             <img src="imagenes/colegio.png">
-
             <img src="imagenes/info.jpeg">
-
             <img src="imagenes/matricula.jpg">
-
         </div>
-
     </section>
 
 </div>
@@ -208,16 +311,9 @@ footer{
     © 2026 Colegios Trilce - Página creada en HTML
 </footer>
 
-<!-- CHATBOT DE BOTPRESS -->
-
-<script src="https://cdn.botpress.cloud/webchat/v3.2/inject.js"></script>
-
-<script>
-window.botpress.init({
-  "botId":"TU_BOT_ID",
-  "clientId":"TU_CLIENT_ID"
-});
-</script>
+</body>
+</html>
+```
 
 </body>
 </html>
