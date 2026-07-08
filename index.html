@@ -75,7 +75,7 @@ header p{
     color:var(--orange-light);
     font-weight:500;
 }
-
+    
 
 nav{
     background:#211311;
@@ -117,6 +117,7 @@ nav a::after{
 nav a:hover::after{
     width:100%;
 }
+
 
 .hero{
     background:url('imagenes/portadatrilce.png');
@@ -285,7 +286,6 @@ li::marker{
     transform:scale(1.03);
 }
 
-
 .sedes-container{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
@@ -393,6 +393,151 @@ li::marker{
 }
 
 
+.pilares-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:18px;
+    margin-top:24px;
+}
+
+.pilar-card{
+    background:var(--cream-alt);
+    padding:24px 20px;
+    border-radius:16px;
+    text-align:center;
+    transition:0.3s;
+}
+
+.pilar-card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 10px 22px rgba(87,20,32,0.1);
+}
+
+.pilar-card .pilar-icon{
+    font-size:32px;
+    display:block;
+    margin-bottom:12px;
+}
+
+.pilar-card h3{
+    color:var(--maroon);
+    font-size:16.5px;
+    font-weight:600;
+    margin-bottom:8px;
+}
+
+.pilar-card p{
+    font-size:14px;
+    color:var(--ink-soft);
+    line-height:1.65;
+}
+
+
+.tab-radio{
+    position:absolute;
+    opacity:0;
+    pointer-events:none;
+}
+
+.tab-labels{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    margin-top:24px;
+}
+
+.tab-labels label{
+    cursor:pointer;
+    padding:10px 22px;
+    border-radius:999px;
+    background:var(--cream-alt);
+    color:var(--maroon);
+    font-weight:600;
+    font-size:14.5px;
+    border:1px solid var(--line);
+    transition:0.3s;
+}
+
+.tab-labels label:hover{
+    border-color:var(--orange);
+}
+
+.tab-panels{
+    margin-top:24px;
+}
+
+.tab-panel{
+    display:none;
+}
+
+#tab-nuevo:checked ~ .tab-labels label[for="tab-nuevo"],
+#tab-traslado:checked ~ .tab-labels label[for="tab-traslado"],
+#tab-regular:checked ~ .tab-labels label[for="tab-regular"]{
+    background:var(--maroon);
+    color:var(--white);
+    border-color:var(--maroon);
+}
+
+#tab-nuevo:checked ~ .tab-panels .panel-nuevo{
+    display:block;
+}
+
+#tab-traslado:checked ~ .tab-panels .panel-traslado{
+    display:block;
+}
+
+#tab-regular:checked ~ .tab-panels .panel-regular{
+    display:block;
+}
+
+.pasos-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:16px;
+}
+
+.pasos-grid-single{
+    grid-template-columns:1fr;
+    max-width:420px;
+}
+
+.paso{
+    background:var(--white);
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:20px;
+    position:relative;
+}
+
+.paso-num{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    width:30px;
+    height:30px;
+    border-radius:50%;
+    background:var(--orange);
+    color:var(--white);
+    font-weight:700;
+    font-size:14px;
+    margin-bottom:10px;
+}
+
+.paso h4{
+    font-family:'Poppins',sans-serif;
+    font-size:15.5px;
+    font-weight:600;
+    color:var(--maroon);
+    margin-bottom:6px;
+}
+
+.paso p{
+    font-size:14px;
+    color:var(--ink-soft);
+    line-height:1.6;
+}
+
+
 .faq-list{
     margin-top:24px;
     max-width:820px;
@@ -438,6 +583,14 @@ li::marker{
     color:var(--ink-soft);
     line-height:1.75;
     max-width:760px;
+}
+
+
+.chatbot-float{
+    position:fixed;
+    bottom:24px;
+    right:24px;
+    z-index:1000;
 }
 
 
@@ -514,6 +667,7 @@ footer{
     <a href="#nosotros">Nosotros</a>
     <a href="#servicios">Servicios</a>
     <a href="#niveles">Niveles</a>
+    <a href="#admision">Matrícula</a>
     <a href="#sedes">Sedes</a>
     <a href="#preguntas">Preguntas</a>
     <a href="#contacto">Contacto</a>
@@ -565,6 +719,55 @@ footer{
         </div>
     </section>
 
+    <section class="seccion" id="pilares">
+        <span class="eyebrow">Más de 46 años de experiencia · 18 sedes en Lima y 6 en provincia</span>
+        <h2>¿Por qué elegir Trilce?</h2>
+
+        <div class="pilares-grid">
+            <div class="pilar-card">
+                <span class="pilar-icon">👩‍🏫</span>
+                <h3>Tutora permanente por aula</h3>
+                <p>Cada salón cuenta con una tutora presente todo el día, acompañando al estudiante en lo académico y emocional.</p>
+            </div>
+
+            <div class="pilar-card">
+                <span class="pilar-icon">📚</span>
+                <h3>Libros gratuitos</h3>
+                <p>El material de estudio está incluido, sin gasto adicional para la familia.</p>
+            </div>
+
+            <div class="pilar-card">
+                <span class="pilar-icon">🛡️</span>
+                <h3>Seguro gratuito</h3>
+                <p>Todos los alumnos cuentan con un seguro médico incluido, sin costo extra.</p>
+            </div>
+
+            <div class="pilar-card">
+                <span class="pilar-icon">🎓</span>
+                <h3>Profesores expertos</h3>
+                <p>Docentes especializados en cada curso, seleccionados por su dominio del área.</p>
+            </div>
+
+            <div class="pilar-card">
+                <span class="pilar-icon">📈</span>
+                <h3>Elevado nivel académico</h3>
+                <p>Un método de enseñanza exigente, con evaluación constante del desempeño del alumno.</p>
+            </div>
+
+            <div class="pilar-card">
+                <span class="pilar-icon">🧑‍💼</span>
+                <h3>Auxiliar permanente</h3>
+                <p>Acompañamiento constante dentro y fuera del aula para el bienestar del estudiante.</p>
+            </div>
+
+            <div class="pilar-card">
+                <span class="pilar-icon">🏆</span>
+                <h3>Sistema "5to"</h3>
+                <p>Preparación preuniversitaria integrada desde el colegio, para llegar más listo a la universidad.</p>
+            </div>
+        </div>
+    </section>
+
     <section class="seccion" id="servicios">
         <span class="eyebrow">Lo que ofrecemos</span>
         <h2>Nuestros Servicios</h2>
@@ -586,6 +789,88 @@ footer{
             <li>Secundaria</li>
             <li>Preparación preuniversitaria</li>
         </ul>
+    </section>
+
+    <section class="seccion" id="admision">
+        <span class="eyebrow">Únete a Trilce</span>
+        <h2>Proceso de matrícula</h2>
+        <p>Elige tu situación para ver los pasos a seguir.</p>
+
+        <div class="tabs">
+            <input type="radio" name="tipo-alumno" id="tab-nuevo" class="tab-radio" checked>
+            <input type="radio" name="tipo-alumno" id="tab-traslado" class="tab-radio">
+            <input type="radio" name="tipo-alumno" id="tab-regular" class="tab-radio">
+
+            <div class="tab-labels">
+                <label for="tab-nuevo">Alumno nuevo</label>
+                <label for="tab-traslado">Alumno traslado</label>
+                <label for="tab-regular">Alumno regular</label>
+            </div>
+
+            <div class="tab-panels">
+
+                <div class="tab-panel panel-nuevo">
+                    <div class="pasos-grid">
+                        <div class="paso">
+                            <span class="paso-num">1</span>
+                            <h4>Completa la ficha</h4>
+                            <p>Llena la ficha de admisión del año escolar correspondiente.</p>
+                        </div>
+                        <div class="paso">
+                            <span class="paso-num">2</span>
+                            <h4>Presenta documentos</h4>
+                            <p>DNI del alumno y del apoderado, libreta de notas y cartilla de vacunación (inicial y primaria).</p>
+                        </div>
+                        <div class="paso">
+                            <span class="paso-num">3</span>
+                            <h4>Formaliza la matrícula</h4>
+                            <p>Realiza el pago, firma el compromiso de matrícula y completa la ficha médica.</p>
+                        </div>
+                        <div class="paso">
+                            <span class="paso-num">4</span>
+                            <h4>Entrevista</h4>
+                            <p>Se coordina una entrevista con los padres y el área de psicología o coordinación.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-panel panel-traslado">
+                    <div class="pasos-grid">
+                        <div class="paso">
+                            <span class="paso-num">1</span>
+                            <h4>Completa la ficha</h4>
+                            <p>Llena la ficha de admisión del año escolar correspondiente.</p>
+                        </div>
+                        <div class="paso">
+                            <span class="paso-num">2</span>
+                            <h4>Presenta documentos</h4>
+                            <p>DNI del alumno y del apoderado, libreta de notas y cartilla de vacunación (inicial y primaria).</p>
+                        </div>
+                        <div class="paso">
+                            <span class="paso-num">3</span>
+                            <h4>Formaliza la matrícula</h4>
+                            <p>Realiza el pago, firma el compromiso de matrícula y completa la ficha médica.</p>
+                        </div>
+                        <div class="paso">
+                            <span class="paso-num">4</span>
+                            <h4>Entrevista o evaluación</h4>
+                            <p>Según el grado, se programa una entrevista o una evaluación de conocimientos de ubicación.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-panel panel-regular">
+                    <div class="pasos-grid pasos-grid-single">
+                        <div class="paso">
+                            <span class="paso-num">✓</span>
+                            <h4>Solo inscripción</h4>
+                            <p>Actualiza la ficha de matrícula del año, firma el compromiso correspondiente y completa la ficha médica del estudiante.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
     </section>
 
     <section class="seccion" id="preguntas">
@@ -803,6 +1088,7 @@ footer{
 <footer>
     Formando estudiantes líderes para el futuro | © 2026 Trilce
 </footer>
+
 
 <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 <script src="mapa.js"></script>
