@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -55,7 +54,7 @@ button:focus-visible{
 
 
 header{
-    background:linear-gradient(135deg,var(--maroon) 0%,var(--maroon-dark) 100%);
+    background:linear-gradient(135deg,var(--orange) 0%,#c9601c 100%);
     color:var(--white);
     padding:34px 20px 30px;
     text-align:center;
@@ -72,10 +71,10 @@ header p{
     font-size:14px;
     letter-spacing:2px;
     text-transform:uppercase;
-    color:var(--orange-light);
+    color:rgba(255,255,255,0.9);
     font-weight:500;
 }
-    
+
 
 nav{
     background:#211311;
@@ -189,6 +188,7 @@ nav a:hover::after{
     box-shadow:0 12px 26px rgba(226,121,46,0.45);
 }
 
+
 .contenedor{
     width:90%;
     max-width:1200px;
@@ -227,7 +227,7 @@ nav a:hover::after{
 }
 
 .seccion h2{
-    color:var(--maroon);
+    color:var(--orange);
     margin-bottom:12px;
     font-size:32px;
     font-weight:600;
@@ -238,7 +238,7 @@ nav a:hover::after{
     display:block;
     width:46px;
     height:3px;
-    background:var(--orange);
+    background:var(--maroon);
     margin-top:14px;
     border-radius:2px;
 }
@@ -286,6 +286,7 @@ li::marker{
     transform:scale(1.03);
 }
 
+
 .sedes-container{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
@@ -297,13 +298,13 @@ li::marker{
     background:var(--cream-alt);
     padding:22px;
     border-radius:14px;
-    border-left:4px solid var(--maroon);
+    border-left:4px solid var(--orange);
     transition:0.3s;
 }
 
 .sede-card:hover{
     transform:translateY(-4px);
-    box-shadow:0 10px 22px rgba(87,20,32,0.12);
+    box-shadow:0 10px 22px rgba(226,121,46,0.18);
 }
 
 .sede-card h3{
@@ -322,7 +323,7 @@ li::marker{
 .sede-card span{
     display:inline-block;
     margin-top:12px;
-    background:var(--maroon);
+    background:var(--orange);
     color:var(--white);
     padding:5px 12px;
     border-radius:20px;
@@ -330,7 +331,6 @@ li::marker{
     font-weight:500;
     letter-spacing:0.3px;
 }
-
 
 .mv-container{
     display:grid;
@@ -451,7 +451,7 @@ li::marker{
     padding:10px 22px;
     border-radius:999px;
     background:var(--cream-alt);
-    color:var(--maroon);
+    color:var(--orange);
     font-weight:600;
     font-size:14.5px;
     border:1px solid var(--line);
@@ -473,9 +473,9 @@ li::marker{
 #tab-nuevo:checked ~ .tab-labels label[for="tab-nuevo"],
 #tab-traslado:checked ~ .tab-labels label[for="tab-traslado"],
 #tab-regular:checked ~ .tab-labels label[for="tab-regular"]{
-    background:var(--maroon);
+    background:var(--orange);
     color:var(--white);
-    border-color:var(--maroon);
+    border-color:var(--orange);
 }
 
 #tab-nuevo:checked ~ .tab-panels .panel-nuevo{
@@ -553,7 +553,7 @@ li::marker{
     list-style:none;
     font-weight:600;
     font-size:16.5px;
-    color:var(--maroon);
+    color:var(--orange);
     display:flex;
     justify-content:space-between;
     align-items:center;
@@ -568,7 +568,7 @@ li::marker{
     content:'+';
     font-size:22px;
     font-weight:400;
-    color:var(--orange);
+    color:var(--maroon);
     flex-shrink:0;
     transition:transform 0.3s;
 }
@@ -586,21 +586,13 @@ li::marker{
 }
 
 
-.chatbot-float{
-    position:fixed;
-    bottom:24px;
-    right:24px;
-    z-index:1000;
-}
-
-
 #map{
     width:100%;
     height:650px;
     border-radius:16px;
     margin-top:24px;
-    border:3px solid var(--maroon);
-    box-shadow:0 14px 30px rgba(87,20,32,0.15);
+    border:3px solid var(--orange);
+    box-shadow:0 14px 30px rgba(226,121,46,0.18);
 }
 
 
@@ -612,6 +604,7 @@ footer{
     margin-top:20px;
     font-size:14px;
     letter-spacing:0.3px;
+    border-top:4px solid var(--orange);
 }
 
 
